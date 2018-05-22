@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		10C827EF20B3BEC800AC1F4F /* CommonCryptoModuleMap */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 10C827F220B3BEC800AC1F4F /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */;
-			buildPhases = (
-				10C827F320B3BEDD00AC1F4F /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = CommonCryptoModuleMap;
-			productName = CommonCryptoModuleMap;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		434F0A9BDD5E82B9C613EE1D /* Pods_JXNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16557B339FD497AE58C35127 /* Pods_JXNetworkKit.framework */; };
 		B3AF2DD61EAEE6CB0071C66A /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF2DCE1EAEE6CB0071C66A /* CocoaLumberjack.swift */; };
@@ -43,16 +29,6 @@
 		E8A296951F4D7A93002E7B26 /* JXDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A296941F4D7A93002E7B26 /* JXDataRequest.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		10C827F420B3BF2200AC1F4F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3DFA4821EA9EEBD00764FC2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 10C827EF20B3BEC800AC1F4F;
-			remoteInfo = CommonCryptoModuleMap;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		16557B339FD497AE58C35127 /* Pods_JXNetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JXNetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E64C0DC0AD70FCC2B80B339 /* Pods-JXNetworkKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXNetworkKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXNetworkKit/Pods-JXNetworkKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +42,8 @@
 		B3AF2DDF1EAF57BE0071C66A /* JXResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXResponse.swift; sourceTree = "<group>"; };
 		B3AF2DE11EAF580C0071C66A /* JXRequestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXRequestConfig.swift; sourceTree = "<group>"; };
 		B3AF2DE31EB0435E0071C66A /* HashUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashUtil.swift; sourceTree = "<group>"; };
+		B3AF2DE51EB048CB0071C66A /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		B3AF2DE81EB078450071C66A /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		B3DFA48A1EA9EEBD00764FC2 /* JXNetworkKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXNetworkKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DFA48D1EA9EEBD00764FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3DFA48F1EA9EEBD00764FC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +124,15 @@
 			path = Sources/TCP;
 			sourceTree = SOURCE_ROOT;
 		};
+		B3AF2DE71EB078330071C66A /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				B3AF2DE81EB078450071C66A /* module.modulemap */,
+			);
+			name = CommonCrypto;
+			path = Sources/CommonCrypto;
+			sourceTree = SOURCE_ROOT;
+		};
 		B3DFA4811EA9EEBD00764FC2 = {
 			isa = PBXGroup;
 			children = (
@@ -167,11 +154,13 @@
 		B3DFA48C1EA9EEBD00764FC2 /* JXNetworkKit */ = {
 			isa = PBXGroup;
 			children = (
+				B3AF2DE71EB078330071C66A /* CommonCrypto */,
 				B3AF2DCE1EAEE6CB0071C66A /* CocoaLumberjack.swift */,
 				B3AF2DCF1EAEE6CB0071C66A /* HTTP */,
 				B3AF2DD01EAEE6CB0071C66A /* Reachability */,
 				B3AF2DD21EAEE6CB0071C66A /* TCP */,
 				B3DFA48D1EA9EEBD00764FC2 /* AppDelegate.swift */,
+				B3AF2DE51EB048CB0071C66A /* bridge.h */,
 				B3DFA48F1EA9EEBD00764FC2 /* ViewController.swift */,
 				B3DFA4911EA9EEBD00764FC2 /* Main.storyboard */,
 				B3DFA4941EA9EEBD00764FC2 /* Assets.xcassets */,
@@ -198,7 +187,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				10C827F520B3BF2200AC1F4F /* PBXTargetDependency */,
 			);
 			name = JXNetworkKit;
 			productName = JXNetworkKit;
@@ -215,10 +203,6 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Juxin;
 				TargetAttributes = {
-					10C827EF20B3BEC800AC1F4F = {
-						CreatedOnToolsVersion = 9.3;
-						ProvisioningStyle = Automatic;
-					};
 					B3DFA4891EA9EEBD00764FC2 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = V4R3BFY32R;
@@ -241,7 +225,6 @@
 			projectRoot = "";
 			targets = (
 				B3DFA4891EA9EEBD00764FC2 /* JXNetworkKit */,
-				10C827EF20B3BEC800AC1F4F /* CommonCryptoModuleMap */,
 			);
 		};
 /* End PBXProject section */
@@ -291,19 +274,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXNetworkKit/Pods-JXNetworkKit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		10C827F320B3BEDD00AC1F4F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This if-statement means we'll only run the main script if the CommonCryptoModuleMap directory doesn't exist\n# Because otherwise the rest of the script causes a full recompile for anything where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger the rest of the script to run\nif [ -d \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\" ]; then\necho \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap directory already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule CommonCrypto [system] {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF";
 		};
 		55458C9A22D380ED530BAF34 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -366,14 +336,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		10C827F520B3BF2200AC1F4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 10C827EF20B3BEC800AC1F4F /* CommonCryptoModuleMap */;
-			targetProxy = 10C827F420B3BF2200AC1F4F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		B3DFA4911EA9EEBD00764FC2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -394,22 +356,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		10C827F020B3BEC800AC1F4F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		10C827F120B3BEC800AC1F4F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		B3DFA49A1EA9EEBD00764FC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -529,8 +475,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6e4bbefc-8d03-46b1-bfd2-8139ffc9756a";
 				PROVISIONING_PROFILE_SPECIFIER = tyPV;
-				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Sources/CommonCrypto";
+				SWIFT_OBJC_BRIDGING_HEADER = JXNetworkKit/bridge.h;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -550,8 +496,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6e4bbefc-8d03-46b1-bfd2-8139ffc9756a";
 				PROVISIONING_PROFILE_SPECIFIER = tyPV;
-				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Sources/CommonCrypto";
+				SWIFT_OBJC_BRIDGING_HEADER = JXNetworkKit/bridge.h;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -560,15 +506,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		10C827F220B3BEC800AC1F4F /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				10C827F020B3BEC800AC1F4F /* Debug */,
-				10C827F120B3BEC800AC1F4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B3DFA4851EA9EEBD00764FC2 /* Build configuration list for PBXProject "JXNetworkKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

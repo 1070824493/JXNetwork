@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JXNetwork"
-  s.version      = "1.0.0"
+  s.version      = "2.1.0"
   s.summary      = "JXNetwork"
   s.description  = "A description of JXNetwork."
   s.homepage     = "http://EXAMPLE/JXNetwork"
@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => 'https://github.com/1070824493/JXNetwork.git', :tag => s.version }
+  s.source       = { :git => 'http://test.game.xiaoyouapp.cn:20080/iOS/JXNetwork.git', :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -61,12 +61,10 @@ Pod::Spec.new do |s|
   # s.libraries = "c++", "z"
 
 
-
-
-
-  s.source_files = 'Sources/**/*.swift'
-  # s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2', 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/JXNetwork/Sources/CommonCrypto' }
-  # s.preserve_paths = 'Sources/CommonCrypto/module.modulemap'
+  s.source_files = "Sources/**/*.{swift}"
+  s.xcconfig = { 'SWIFT_INCLUDE_PATHS' =>
+  '$(PODS_ROOT)/JXNetwork/Sources/CommonCrypto' }
+  s.preserve_paths = 'Sources/CommonCrypto/module.modulemap'
   s.dependency            'MBProgressHUD'
   s.dependency            'CocoaLumberjack'
   s.dependency            'Alamofire'
